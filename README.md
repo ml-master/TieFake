@@ -5,7 +5,8 @@ To run the code in this repo, you need to have `Python>=3.9.6`, `PyTorch>=1.9.0`
 Other dependencies can be installed using the following commands:
 
 use `pip install -r requirements.txt` to download datasets
-clean datasets and save them into folder Data,such as:
+
+The organization of the data folder is as follows：
 ```
 --Data
   --gossipcop_images
