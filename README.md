@@ -30,11 +30,14 @@ The organization of the data folder is as follows：
 ```
 
 run Data/dataprocess.py to merge each dataset and split train and test dataset
+
 run bert_training.py to train bert in these datasets
+
 run resnest101_training.py to train resnest_101 in these datasets
+
 run main.py to train fusion_model
 
-# Experimental result 
+# Result 
 
 
 
