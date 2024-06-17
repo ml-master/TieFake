@@ -4,9 +4,9 @@
 To run the code in this repo, you need to have `Python>=3.9.6`, `PyTorch>=1.9.0`
 Other dependencies can be installed using the following commands:
 
-pip install -r requirements.txt
-download datasets
+use `pip install -r requirements.txt` to download datasets
 clean datasets and save them into folder Data,such as:
+```
 --Data
   --gossipcop_images
     --xx.jpg
@@ -26,6 +26,7 @@ clean datasets and save them into folder Data,such as:
     --gossipcop_train.tsv
     --gossipcop_test.tsv
   ......
+```
 
 run Data/dataprocess.py to merge each dataset and split train and test dataset
 run bert_training.py to train bert in these datasets
