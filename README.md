@@ -1,4 +1,4 @@
-## TieFake: Title-Text Similarity and Emotion-Aware Fake News Detection (TieFake).
+## TieFake: Title-Text Similarity and Emotion-Aware Fake News Detection.
 # Start
 
 To run the code in this repo, you need to have `Python>=3.9.6`, `PyTorch>=1.9.0`
