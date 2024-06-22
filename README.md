@@ -2,9 +2,9 @@
 # Start
 
 To run the code in this repo, you need to have `Python>=3.9.6`, `PyTorch>=1.9.0`
-Other dependencies can be installed using the following commands:
 
-use `pip install -r requirements.txt` to download datasets
+Other dependencies can be installed using the following commands:
+`pip install -r requirements.txt`
 
 The organization of the data folder is as follows：
 ```
@@ -14,14 +14,10 @@ The organization of the data folder is as follows：
     ......
   --processed_data
     --gossipcop_v3-1_style_based_fake.tsv
-    --gossipcop_v3-2_content_based_fake.tsv
-    --gossipcop_v3-3_integration_based_fake_tn200.tsv
     --gossipcop_v3-4_story_based_fake.tsv
   --raw_data
   --target_data
     --gossipcop_v3-1_style_based_fake.json
-    --gossipcop_v3-2_content_based_fake.json
-    --gossipcop_v3-3_integration_based_fake_tn200.json
     --gossipcop_v3-4_story_based_fake.json
   --v3-1
     --gossipcop_train.tsv
@@ -29,10 +25,19 @@ The organization of the data folder is as follows：
   ......
 ```
 
-1. run `Data/dataprocess.py` to merge each dataset and split train and test dataset
+# Running
+1. run `Data/dataprocess.py` to merge each dataset and split train and test dataset, then the processed dataset will be placed in `Data/processed_data` folder, train and test dataset will be placed in `Data/{dataset_floder}/` folder, dataset_floder: `['v3-1', '3-1_generated', 'v3-4', '3-4_generated', '3-4*']`
 2. run `bert_training.py` to train bert in these datasets
 3. run `resnest101_training.py` to train resnest_101 in these datasets
 4. run `main.py` to train fusion_model
+
+Notice： 
+1. Modify the following code to specify the dataset you want to train.
+```
+folder = "v3-1" # 当前训练的数据集 ['v3-1', '3-1_generated', 'v3-4', '3-4_generated', '3-4*']
+generated = False # 是否使用LLM生成的新数据集 ['True', 'False']
+```
+2. Modify the `text_sent = self.csv_frame.loc[idx, 'text']` in `dataloader.py` to change news texts you will train. If you want to train original texts, then use `text_sent = self.csv_frame.loc[idx, 'origin_text']`, if you want to train generated texts, then use `text_sent = self.csv_frame.loc[idx, 'generated_text']`, The `dataloader.py` contains three relevant lines of code, please make sure to modify all of them.
 
 # Result 
 The experimental results of the replication are presented in the table below.
