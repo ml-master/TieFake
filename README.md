@@ -31,8 +31,8 @@ The organization of the data folder is as follows：
 3. run `resnest101_training.py` to train resnest_101 in these datasets
 4. run `main.py` to train fusion_model
 
-Notice： 
-1. Modify the following code to specify the dataset you want to train.
+**Notice：** 
+1. Modify the following code in `main.py` to specify the dataset you want to train.
 ```
 folder = "v3-1" # 当前训练的数据集 ['v3-1', '3-1_generated', 'v3-4', '3-4_generated', '3-4*']
 generated = False # 是否使用LLM生成的新数据集 ['True', 'False']
